@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    style="@style/matchParent" >
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/gray"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/cities"
         android:name="com.example.notesapp.FragmentNotes"
         android:layout_width="0px"
         android:layout_height="match_parent"
-        android:layout_weight="4" />
+        android:layout_weight="2" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FrameLayoutNoteBody"
@@ -19,12 +36,9 @@
         android:layout_height="match_parent"
         android:layout_weight="4" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/buttonAddNewNote"
-        android:name="com.example.notesapp.FragmentButtonAddNewNote"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"/>
-
-</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNotes"
+        style="@style/FAB"
+        tools:ignore="ContentDescription" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+   <dimen name="marginTextInput">10dp</dimen>
+   <dimen name="textSize">30sp</dimen>
+   <dimen name="marginButtonFAB">16dp</dimen>
+</resources>

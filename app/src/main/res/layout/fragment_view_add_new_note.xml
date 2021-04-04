@@ -7,44 +7,32 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/notesNameTextInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_margin="10dp"
+        style="@style/TextInputLayout"
         android:hint="@string/editNameNotes">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextNoteName"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:inputType="text" />
+            style="@style/TextInputEditText" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/notesBodyTextInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_margin="10dp"
+        style="@style/TextInputLayout"
         android:hint="@string/editBodyNotes">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextNoteBody"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:inputType="text" />
+            style="@style/TextInputEditText" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSave"
-        android:text="Сохранить заметку"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        style="@style/MaterialButton"
+        android:text="@string/StringSaveNote" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnBack"
-        android:text="Вернуться назад"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-
+        style="@style/MaterialButton"
+        android:text="@string/StringBackTo" />
 
 </LinearLayout>

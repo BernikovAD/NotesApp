@@ -30,6 +30,14 @@ android {
 configurations {
     compile.exclude group: "junit", module: "junit"
 }
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
+    }
+}
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -37,6 +45,8 @@ dependencies {
     implementation 'com.android.support:design:28.0.0-alpha1'
     implementation 'androidx.fragment:fragment:1.3.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'com.google.android.material:material:1.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'org.testng:testng:6.9.6'
     testImplementation 'junit:junit:4.13.2'

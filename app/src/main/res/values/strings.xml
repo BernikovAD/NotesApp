@@ -7,4 +7,12 @@
     <string name="btnAdd">Добавить</string>
     <string name="editNameNotes">Введите название заметки</string>
     <string name="editBodyNotes">Введите описание заметки</string>
+    <string name="settings">Настройки</string>
+    <string name="favorite">Favorite</string>
+    <string name="main">Главная</string>
+    <string name="back">Назад</string>
+    <string name="search">Поиск</string>
+    <string name="appInfo">О программе</string>
+    <string name="StringSaveNote">Сохранить заметку</string>
+    <string name="StringBackTo">Вернуться назад</string>
 </resources>

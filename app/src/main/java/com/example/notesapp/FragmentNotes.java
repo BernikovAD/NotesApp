@@ -13,8 +13,14 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class FragmentNotes extends Fragment {
@@ -46,25 +52,18 @@ public class FragmentNotes extends Fragment {
         initList(view);
     }
     private void initList(View view) {
-        LinearLayout layoutView = (LinearLayout) view;
-        String[] notes = getResources().getStringArray(R.array.notes);
-        String[] notes_body = getResources().getStringArray(R.array.notesBody);
-        for (int i = 0; i < notes.length; i++) {
-            String note = notes[i];
-            String noteBody = notes_body[i];
-            TextView tv = new TextView(getContext());
-            tv.setText(note);
-            tv.setTextSize(30);
-            layoutView.addView(tv);
-            final int fi = i;
-            tv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    currentNote = new Note(getResources().getStringArray(R.array.notesBody)[fi]);
-                    noteShow(currentNote);
-                }
-            });
-        }
+        ListView listView = (ListView) view.findViewById(R.id.listView1);
+        ArrayList<String> arrayListNotes = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.notes)));
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_expandable_list_item_1, arrayListNotes);
+        listView.setAdapter(arrayAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                currentNote = new Note(getResources().getStringArray(R.array.notesBody)[position]);
+                noteShow(currentNote);
+            }
+        });
+
     }
 
     @Override

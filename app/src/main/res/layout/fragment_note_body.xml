@@ -2,16 +2,14 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/matchParent"
     android:orientation="vertical"
     tools:context=".FragmentNoteBody">
 
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="30sp"/>
+        style="@style/matchParent"
+        android:textSize="@dimen/textSize"/>
 
 </LinearLayout>
